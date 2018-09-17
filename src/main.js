@@ -5,6 +5,7 @@ import 'antd/dist/antd.css';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 
 
+
 const TabPane = Tabs.TabPane;
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -43,8 +44,8 @@ const columns = [{
   dataIndex: 'name',
   width: 150,
 }, {
-  title: 'Cheque No.',
-  dataIndex: 'age',
+  title: 'Principal',
+  dataIndex: 'principal',
   width: 150,
 },
 {
@@ -55,13 +56,13 @@ const columns = [{
   title: 'Date Created',
   dataIndex: 'address',
 }];
-const colum = [{
+const column = [{
   title: 'Name',
   dataIndex: 'name',
 
 }, {
   title: 'Cheque No.',
-  dataIndex: 'age',
+  dataIndex: 'Cheque',
 
 },
 {
@@ -70,19 +71,24 @@ const colum = [{
 
 },{
   title: 'Date Created',
-  dataIndex: 'address',
+  dataIndex: 'Datee',
 }];
-const column = [{
+const colum = [{
   title: 'Name',
   dataIndex: 'name',
 
 }, {
   title: 'Cheque No.',
-  dataIndex: 'age',
+  dataIndex: 'Cheque',
 
 },
 {
-  title: 'Date Created',
+ title: 'Phone Number',
+ dataIndex: 'Phone',
+
+},
+{
+  title: 'Location',
   dataIndex: 'address',
 }];
 
@@ -90,12 +96,16 @@ const data = [];
 for (let i = 0; i < 15; i++) {
   data.push({
     key: i,
+    Phone: '+255-768568932',
     name: `Edward King ${i}`,
     age: 32,
     principal: 250000 + i ,
+    Cheque: 1256-4581-2548,
+    Datee: 1-12-2018,
     address: `London, Park Lane no. ${i}`,
   });
 }
+const db = require('./serve.js');
 
 class main extends Component {
   constructor(props){
@@ -116,6 +126,7 @@ class main extends Component {
   this.handleChange = this.handleChange.bind(this);
   this.handleChang = this.handleChang.bind(this);
   this.handleChan = this.handleChan.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 }
 
 setModal2Visible(visibl) {
@@ -127,7 +138,10 @@ setModal2Visible(visibl) {
       visiblee: true,
     });
   };
+  handleClick = () => {
 
+ db.addProtocol()
+   }
   onClosee = () => {
     this.setState({
       visiblee: false,
@@ -153,9 +167,11 @@ setModal2Visible(visibl) {
 
   handleClick = () => {
 
-  // Retrieve the input fields
+   db.addProtocol()
+  }
+  handleClic = () => {
 
-this.props.history.push("/textbox")
+     this.props.history.push("/Login")
   }
 
   handleChange(event) {
@@ -232,14 +248,14 @@ visible: false,
                <Form.Item label="First Name">
                  {getFieldDecorator('firstname', {
                    rules: [{ required: true, message: 'please enter first name' }],
-                 })(<Input  placeholder="please enter first name" />)}
+                 })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}  placeholder="please enter first name" />)}
                </Form.Item>
              </Col>
              <Col span={12}>
              <Form.Item label="Second Name">
                {getFieldDecorator('secondname', {
                  rules: [{ required: true, message: 'please enter second name' }],
-               })(<Input  placeholder="please enter second name" />)}
+               })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}  placeholder="please enter second name" />)}
              </Form.Item>
            </Col>
 
@@ -338,7 +354,7 @@ visible: false,
                 maskClosable={false}
            width={800}
            visible={this.state.visibl}
-           onOk={() => this.setModal2Visible(false)}
+           onOk={this.handleClick}
           onCancel={() => this.setModal2Visible(false)}
 
                       okText="Create Loan"
@@ -386,14 +402,14 @@ visible: false,
                   <Form.Item label="First Name">
                     {getFieldDecorator('name', {
                       rules: [{ required: true, message: 'please enter First name' }],
-                    })(<Input placeholder="please enter First name" />)}
+                    })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter First name" />)}
                   </Form.Item>
                 </Col>
                 <Col span={12}>
                   <Form.Item label="Second namel">
                   {getFieldDecorator('secondname', {
                     rules: [{ required: true, message: 'please enter second name' }],
-                  })(<Input  placeholder="please enter second name" />)}
+                  })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter second name" />)}
                   </Form.Item>
                 </Col>
               </Row>
@@ -402,7 +418,7 @@ visible: false,
                   <Form.Item label="Last name">
                   {getFieldDecorator('Lastname', {
                     rules: [{ required: true, message: 'please enter Last name' }],
-                  })(<Input  placeholder="please enter Last name" />)}
+                  })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}  placeholder="please enter Last name" />)}
                   </Form.Item>
                 </Col>
                 <Col span={12}>
@@ -578,7 +594,7 @@ visible: false,
            borderRadius: '0 0 4px 4px',
          }}
        >
-               <Button onClick={this.handleClick} type="primary">Log Out</Button>
+               <Button onClick={this.handleClic} type="primary">Log Out</Button>
        </div>
           </div>
 

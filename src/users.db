@@ -1,0 +1,4 @@
+// Let's say our datastore contains the following collection
+{ _id: 'id1', planet: 'Mars', system: 'solar', inhabited: false, satellites: ['Phobos', 'Deimos'] }
+ { _id: 'id2', planet: 'Earth', system: 'solar', inhabited: true, humans: { genders: 2, eyes: true } }
+ { _id: 'id3', planet: 'Jupiter', system: 'solar', inhabited: false }

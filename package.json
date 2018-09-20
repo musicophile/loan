@@ -1,11 +1,11 @@
 {
-  "name": "loan",
-  "description": "Just application fo loan issues.......",
-  "author": "Chalii ya R-chuga",
-  "version": "0.2.7",
+  "name": "Loan",
+  "description": "Desktop application for tracking and managing Loan ",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "antd": "^3.8.4",
+    "country-region-dropdown-menu": "^1.2.1",
     "cross-env": "5.1.6",
     "electron-is-dev": "^0.3.0",
     "electron-log": "^2.2.6",
@@ -22,6 +22,7 @@
     "electron-builder": "^20.28.3",
     "prettier": "^1.4.4",
     "react-scripts": "1.1.4",
+    "react-select-country": "0.0.15",
     "wait-on": "^2.1.0"
   },
   "build": {

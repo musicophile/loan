@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import main from "./main";
-import textbox from "./textbox";
+import Content from "./Content";
+import UserInfomation from "./UserInfomation";
+import Login from "./Login";
 
 
 import { Route, BrowserRouter , Link, Redirect } from 'react-router-dom';
@@ -16,13 +17,10 @@ class App extends Component {
       <BrowserRouter history={history} >
            <div>
 
-               <Route exact  path={"/"} component={textbox}/>
-                
-                <Route path={"/main"} component={main}/>
-                <Route path={"/textbox"} component={textbox}/>
-
-
-
+               <Route exact  path={"/"} component={Login}/>
+                <Route path={"/Content"} component={Content}/>
+                <Route path={"/Login"} component={Login}/>
+                <Route path={"/UserInfomation"} component={UserInfomation}/>
                           </div>
                 </BrowserRouter>
     );

@@ -5,8 +5,8 @@ import 'antd/dist/antd.css';
 
 const { Option } = Select;
 const FormItem = Form.Item;
-const db = require('./serve.js');
-class textbox extends Component {
+const db = require("../services/serve.js");
+class Login extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -21,6 +21,8 @@ visible: false
       });
     };
 
+
+
     onClose = () => {
       this.setState({
         visible: false,
@@ -29,7 +31,7 @@ visible: false
 
     hide = () => {
 
-    this.props.history.push("/main")
+    this.props.history.push("/Content")
 
     }
     handleClick = () => {
@@ -103,32 +105,32 @@ visible: false
 
                 <Form.Item label="First Name">
                   {getFieldDecorator('name', {
-                    rules: [{ required: true, message: 'please enter user name' }],
-                  })(<Input placeholder="please enter user name" />)}
+                    rules: [{ required: true, message: 'please enter First Name' }],
+                  })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter First Name" />)}
                 </Form.Item>
 
                 <Form.Item label="Second Name">
-                  {getFieldDecorator('url', {
-                    rules: [{ required: true, message: 'please enter url' }],
-                  })(<Input placeholder="please enter user name" />)}
+                  {getFieldDecorator('Second Name', {
+                    rules: [{ required: true, message: 'please enter Second Name' }],
+                  })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Second Name" />)}
                 </Form.Item>
 
                 <Form.Item label="Email">
-                  {getFieldDecorator('owner', {
-                    rules: [{ required: true, message: 'Please select an owner' }],
-                  })(<Input placeholder="please enter user name" />)}
+                  {getFieldDecorator('Email', {
+                    rules: [{ required: true, message: 'Please enter an Email' }],
+                  })(<Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Email" />)}
                 </Form.Item>
 
                 <Form.Item label="Password">
-                  {getFieldDecorator('type', {
-                    rules: [{ required: true, message: 'Please choose the type' }],
-                  })(<Input placeholder="please enter user name" />)}
+                  {getFieldDecorator('Password', {
+                    rules: [{ required: true, message: 'Please choose the Password' }],
+                  })(<Input  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Password" />)}
                 </Form.Item>
 
               <Form.Item label="Confim Password">
                 {getFieldDecorator('type', {
-                  rules: [{ required: true, message: 'Please choose the type' }],
-                })(<Input placeholder="please enter user name" />)}
+                  rules: [{ required: true, message: 'Please Confim Password' }],
+                })(<Input  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter to Confim Password" />)}
               </Form.Item>
 
 
@@ -162,4 +164,4 @@ visible: false
   }
 }
 
-export default Form.create()(textbox);
+export default Form.create()(Login);

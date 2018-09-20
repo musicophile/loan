@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-  import { Drawer, Form, Icon, Button, Col, Row, Checkbox, Input, Select, DatePicker } from 'antd';
+import { Drawer, Form, Icon, Button, Col, Row, Checkbox, Input, Select, DatePicker } from 'antd';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 import 'antd/dist/antd.css';
 
@@ -7,87 +7,87 @@ const { Option } = Select;
 const FormItem = Form.Item;
 const db = require('./serve.js');
 class Login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-visible: false
+    this.state = {
+      visible: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
-    showDrawer = () => {
-      this.setState({
-        visible: true,
-      });
-    };
+  showDrawer = () => {
+    this.setState({
+      visible: true,
+    });
+  };
 
 
 
-    onClose = () => {
-      this.setState({
-        visible: false,
-      });
-    };
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
 
-    hide = () => {
+  hide = () => {
 
     this.props.history.push("/main")
 
+  }
+  handleClick = () => {
+
+    // create a protocol object
+    var protocol = {
+      "title": this.firstname
     }
-    handleClick = () => {
-
-      // create a protocol object
-                 var protocol = {
-                     "title": this.firstname
-                   }
 
 
-   db.addProtocol()
+    db.addProtocol()
 
-  //alert ("Error , please check your username and password");
-     }
+    //alert ("Error , please check your username and password");
+  }
 
   render() {
-   const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form;
     return (
       <div>
-      <div
+        <div
 
-       style={{
-          height: 'calc(100% - 55px)',
-          overflow: 'auto',
-          paddingLeft: 350,
-          position: 'absolute',
-          align: 'center'
-        }} >
-      Login
-      <Form className="login-form"  style={{ width: '300px'}}>
-        <FormItem>
+          style={{
+            height: 'calc(100% - 55px)',
+            overflow: 'auto',
+            paddingLeft: 350,
+            position: 'absolute',
+            align: 'center'
+          }} >
+          Login
+      <Form className="login-form" style={{ width: '300px' }}>
+            <FormItem>
 
-            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} id="first" placeholder="Username" />
+              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} id="first" placeholder="Username" />
 
-        </FormItem>
-        <FormItem>
+            </FormItem>
+            <FormItem>
 
-            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} id="Second" type="password" placeholder="Password" />
+              <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} id="Second" type="password" placeholder="Password" />
 
-        </FormItem>
-        <FormItem>
+            </FormItem>
+            <FormItem>
 
-            <Checkbox>Remember me</Checkbox>
+              <Checkbox>Remember me</Checkbox>
 
-            <Button type="primary " onClick={this.hide}  htmlType="submit" className="login-form-button">
-              Log in
+              <Button type="primary " onClick={this.hide} htmlType="submit" className="login-form-button">
+                Log in
             </Button>
 
-        </FormItem>
-        </Form>
+            </FormItem>
+          </Form>
 
-        <Button type="primary" onClick={this.showDrawer}>
-        Register Account
+          <Button type="primary" onClick={this.showDrawer}>
+            Register Account
         </Button>
 
-          </div>
+        </div>
         <Drawer
           title="Create New Account"
           width={500}
@@ -103,35 +103,35 @@ visible: false
         >
           <Form layout="vertical" hideRequiredMark>
 
-                <Form.Item label="First Name">
-                  {getFieldDecorator('name', {
-                    rules: [{ required: true, message: 'please enter First Name' }],
-                  })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter First Name" />)}
-                </Form.Item>
+            <Form.Item label="First Name">
+              {getFieldDecorator('name', {
+                rules: [{ required: true, message: 'please enter First Name' }],
+              })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter First Name" />)}
+            </Form.Item>
 
-                <Form.Item label="Second Name">
-                  {getFieldDecorator('Second Name', {
-                    rules: [{ required: true, message: 'please enter Second Name' }],
-                  })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Second Name" />)}
-                </Form.Item>
+            <Form.Item label="Second Name">
+              {getFieldDecorator('Second Name', {
+                rules: [{ required: true, message: 'please enter Second Name' }],
+              })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Second Name" />)}
+            </Form.Item>
 
-                <Form.Item label="Email">
-                  {getFieldDecorator('Email', {
-                    rules: [{ required: true, message: 'Please enter an Email' }],
-                  })(<Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Email" />)}
-                </Form.Item>
+            <Form.Item label="Email">
+              {getFieldDecorator('Email', {
+                rules: [{ required: true, message: 'Please enter an Email' }],
+              })(<Input prefix={<Icon type="mail" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Email" />)}
+            </Form.Item>
 
-                <Form.Item label="Password">
-                  {getFieldDecorator('Password', {
-                    rules: [{ required: true, message: 'Please choose the Password' }],
-                  })(<Input  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Password" />)}
-                </Form.Item>
+            <Form.Item label="Password">
+              {getFieldDecorator('Password', {
+                rules: [{ required: true, message: 'Please choose the Password' }],
+              })(<Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Password" />)}
+            </Form.Item>
 
-              <Form.Item label="Confim Password">
-                {getFieldDecorator('type', {
-                  rules: [{ required: true, message: 'Please Confim Password' }],
-                })(<Input  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter to Confim Password" />)}
-              </Form.Item>
+            <Form.Item label="Confim Password">
+              {getFieldDecorator('type', {
+                rules: [{ required: true, message: 'Please Confim Password' }],
+              })(<Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter to Confim Password" />)}
+            </Form.Item>
 
 
           </Form>

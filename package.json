@@ -1,8 +1,7 @@
 {
-  "name": "loan",
-  "description": "Just application fo loan issues.......",
-  "author": "Chalii ya R-chuga",
-  "version": "0.2.7",
+  "name": "Loan",
+  "description": "Desktop application for tracking and managing Loan ",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "antd": "^3.8.4",

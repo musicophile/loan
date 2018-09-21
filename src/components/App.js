@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import main from "./main";
+import Content from "./Content";
+import UserInfomation from "./UserInfomation";
 import Login from "./Login";
 
 
@@ -17,12 +18,9 @@ class App extends Component {
            <div>
 
                <Route exact  path={"/"} component={Login}/>
-
-                <Route path={"/main"} component={main}/>
+                <Route path={"/Content"} component={Content}/>
                 <Route path={"/Login"} component={Login}/>
-
-
-
+                <Route path={"/UserInfomation"} component={UserInfomation}/>
                           </div>
                 </BrowserRouter>
     );

@@ -17,9 +17,9 @@ db.insert(doc, function (err, newDoc) {
 
   if(err) {
 
-      alert ("Error , please check your username and password"); return;
+      alert ("Error , please check your connection"); return;
   } else {
-alert ("protocol added...");
+alert ("Database are very well connected..");
 
   }
    // Callback is optional

@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 
 const { Option } = Select;
 const FormItem = Form.Item;
-const db = require('./serve.js');
+const db = require("../services/serve.js");
 class Login extends Component {
   constructor(props){
     super(props);
@@ -21,6 +21,8 @@ visible: false
       });
     };
 
+
+
     onClose = () => {
       this.setState({
         visible: false,
@@ -29,7 +31,7 @@ visible: false
 
     hide = () => {
 
-    this.props.history.push("/main")
+    this.props.history.push("/Content")
 
     }
     handleClick = () => {

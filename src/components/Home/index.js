@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { Drawer, Form, Icon, Button, Cascader,Table, Col, Row, Tabs,Input,
   Select, DatePicker,
 } from 'antd';
@@ -8,6 +9,16 @@ import LoanInformation from '../LoanInformation';
 import CustomerInformation from '../CustomerInformation';
 import CustomerForm from '../CustomerForm';
 
+=======
+import {
+  Drawer, Form, Icon, Button, Cascader, Popconfirm, Modal, Table, Col, Row, Tabs, Checkbox, Input, Timeline,
+  Select, DatePicker, List, Avatar, Divider,
+} from 'antd';
+import 'antd/dist/antd.css';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+import Loanform from '../LoanForm';
+// import Loanfeedback from './LoanFeedback';
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 
 
 const TabPane = Tabs.TabPane;
@@ -67,6 +78,17 @@ function onChange(value, selectedOptions) {
 function filter(inputValue, path) {
   return (path.some(option => (option.label).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
 }
+<<<<<<< HEAD
+=======
+const Option = Select.Option;
+const pStyle = {
+  fontSize: 16,
+  color: 'rgba(0,0,0,0.85)',
+  lineHeight: '24px',
+  display: 'block',
+  marginBottom: 16,
+};
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 
 const columns = [{
   title: 'Name',
@@ -85,7 +107,6 @@ const columns = [{
   title: 'Date Created',
   dataIndex: 'address',
 }];
-
 const data = [];
 for (let i = 0; i < 15; i++) {
   data.push({
@@ -283,7 +304,11 @@ class Content extends Component {
                   placeholder="Please select"
                   showSearch={{ filter }}
                 />
+<<<<<<< HEAD
                 <Table columns={columns} dataSource={data} />
+=======
+                <Table columns={column} dataSource={data} />
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
               </div>
             </div></TabPane>
           <TabPane tab={<span><Icon type="file" />Report</span>} key="4"><br />No report to print out</TabPane>

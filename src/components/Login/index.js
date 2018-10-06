@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Drawer, Form, Icon, Button, Col, Row, Checkbox, Input, Select, DatePicker } from 'antd';
+<<<<<<< HEAD
+=======
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 import 'antd/dist/antd.css';
 
 const { Option } = Select;
@@ -40,7 +44,11 @@ class Login extends Component {
     }
 
 
+<<<<<<< HEAD
    // db.addProtocol()
+=======
+    db.addProtocol()
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 
     //alert ("Error , please check your username and password");
   }

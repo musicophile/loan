@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Content from "./Home";
+<<<<<<< HEAD
 import Login from './Login';
+import UserInfomation from "./UserInfomation";
 import Home from './Home';
 
 
@@ -19,7 +21,8 @@ class App extends Component {
           <Route exact path={"/"} component={Home} />
           <Route path={"/Content"} component={Content} />
           <Route path={"/Login"} component={Login} />
-                  </Switch>
+          <Route path={"/UserInfomation"} component={UserInfomation} />
+        </Switch>
       </BrowserRouter>
     );
   }

@@ -3,8 +3,13 @@ import React, { Component } from 'react';
 import './App.css';
 import Content from "./Home";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Login from './Login';
 import UserInfomation from "./UserInfomation";
+=======
+import UserInfomation from "./UserInfomation";
+import Login from "./Login";
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 import Home from './Home';
 
 

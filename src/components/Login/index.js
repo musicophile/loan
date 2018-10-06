@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Drawer, Form, Icon, Button, Col, Row, Checkbox, Input, Select, DatePicker } from 'antd';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 >>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 import 'antd/dist/antd.css';
@@ -45,7 +48,11 @@ class Login extends Component {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    // db.addProtocol()
+=======
+    db.addProtocol()
+>>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 =======
     db.addProtocol()
 >>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de

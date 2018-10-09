@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Drawer, Form, Icon, Button,Checkbox, Input, Select } from 'antd';
 import 'antd/dist/antd.css';
-import Datastore from 'nedb';
 
-const dbStock = new Datastore({ filename: 'src/data/datasource.json', autoload: true });
+const Datastore = require('nedb')
+  , newLocal = 'src/data/datasource.json', db = new Datastore({ filename: newLocal, autoload: true });
 const { Option } = Select;
 const FormItem = Form.Item;
 //const db = require('./services/serve.js');
@@ -40,7 +40,7 @@ class Login extends Component {
     , infos: { name: 'nedb' }
     };
 
-    dbStock.insert(doc, function (err, newDoc) {   // Callback is optional
+    db.insert(doc, function (err, newDoc) {   // Callback is optional
 // newDoc is the newly inserted document, including its _id
 // newDoc has no key called notToBeSaved since its value was undefined
 });

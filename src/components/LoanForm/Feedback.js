@@ -58,12 +58,8 @@ class Feedback extends Component {
             />
           </Col>
         </Row>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          </div>
-=======
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
+
+
         {/* <div
           style={{
             position: 'absolute',
@@ -88,10 +84,7 @@ class Feedback extends Component {
           <Button onClick={this.onSecond} type="primary">Next</Button>
         </div> */}
       </div>
-<<<<<<< HEAD
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
+
     )
   }
 };

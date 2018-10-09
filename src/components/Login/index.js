@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { Drawer, Form, Icon, Button, Col, Row, Checkbox, Input, Select, DatePicker } from 'antd';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-import { BrowserRouter, Link, Route } from 'react-router-dom';
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
+import { Drawer, Form, Icon, Button,Checkbox, Input, Select } from 'antd';
 import 'antd/dist/antd.css';
+import Datastore from 'nedb';
 
+const dbStock = new Datastore({ filename: 'src/data/datasource.json', autoload: true });
 const { Option } = Select;
 const FormItem = Form.Item;
 //const db = require('./services/serve.js');
@@ -35,8 +30,21 @@ class Login extends Component {
   };
 
   hide = () => {
+    var doc = { hello: 'world'
+    , n: 5
+    , today: new Date()
+    , nedbIsAwesome: true
+    , notthere: null
+    , notToBeSaved: undefined  // Will not be saved
+    , fruits: [ 'apple', 'orange', 'pear' ]
+    , infos: { name: 'nedb' }
+    };
 
-    this.props.history.push("/Home")
+    dbStock.insert(doc, function (err, newDoc) {   // Callback is optional
+// newDoc is the newly inserted document, including its _id
+// newDoc has no key called notToBeSaved since its value was undefined
+});
+    this.props.history.push("/")
 
   }
   handleClick = () => {
@@ -46,16 +54,6 @@ class Login extends Component {
       "title": this.firstname
     }
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-   // db.addProtocol()
-=======
-    db.addProtocol()
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-=======
-    db.addProtocol()
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 
     //alert ("Error , please check your username and password");
   }

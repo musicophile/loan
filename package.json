@@ -23,7 +23,8 @@
     "prettier": "^1.4.4",
     "react-scripts": "1.1.4",
     "react-select-country": "0.0.15",
-    "wait-on": "^2.1.0"
+    "wait-on": "^2.1.0",
+    "ws": "3.3.2"
   },
   "build": {
     "publish": {

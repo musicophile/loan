@@ -2,22 +2,19 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Content from "./Home";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Login from './Login';
-import UserInfomation from "./UserInfomation";
-=======
-import UserInfomation from "./UserInfomation";
-import Login from "./Login";
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
+//import UserInfomation from "./UserInfomation";
 import Home from './Home';
+import Testing from './Testing';
+import Datastore from 'nedb';
 
 
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import createHistory from "history/createBrowserHistory";
 const history = createHistory();
 const { app } = window.require('electron').remote;
-
+const dbStock = new Datastore({ filename: '/data/datasource.json', autoload: true });
+const dbBilling = new Datastore({ filename: '/data/datasource-billing.json', autoload: true });
 class App extends Component {
   render() {
     return (
@@ -26,7 +23,7 @@ class App extends Component {
           <Route exact path={"/"} component={Home} />
           <Route path={"/Content"} component={Content} />
           <Route path={"/Login"} component={Login} />
-          <Route path={"/UserInfomation"} component={UserInfomation} />
+          <Route path='/Testing' render={()=><Testing {...this.props} dbBilling={dbBilling} dbStock= {dbStock} />} />
         </Switch>
       </BrowserRouter>
     );

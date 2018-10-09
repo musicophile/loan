@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import { Drawer, Form, Icon, Button, Cascader,Table, Col, Row, Tabs,Input,
   Select, DatePicker,
 } from 'antd';
@@ -9,22 +8,7 @@ import Loanform from '../LoanForm';
 import LoanInformation from '../LoanInformation';
 import CustomerInformation from '../CustomerInformation';
 import CustomerForm from '../CustomerForm';
-
-=======
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-import {
-  Drawer, Form, Icon, Button, Cascader, Popconfirm, Modal, Table, Col, Row, Tabs, Checkbox, Input, Timeline,
-  Select, DatePicker, List, Avatar, Divider,
-} from 'antd';
-import 'antd/dist/antd.css';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
-import Loanform from '../LoanForm';
-// import Loanfeedback from './LoanFeedback';
-<<<<<<< HEAD
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
+import Installment from '../Installment';
 
 
 const TabPane = Tabs.TabPane;
@@ -84,25 +68,9 @@ function onChange(value, selectedOptions) {
 function filter(inputValue, path) {
   return (path.some(option => (option.label).toLowerCase().indexOf(inputValue.toLowerCase()) > -1));
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-const Option = Select.Option;
-const pStyle = {
-  fontSize: 16,
-  color: 'rgba(0,0,0,0.85)',
-  lineHeight: '24px',
-  display: 'block',
-  marginBottom: 16,
-};
-<<<<<<< HEAD
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 
-const columns = [{
+
+const column = [{
   title: 'Name',
   dataIndex: 'name',
   width: 150,
@@ -119,44 +87,6 @@ const columns = [{
   title: 'Date Created',
   dataIndex: 'address',
 }];
-<<<<<<< HEAD
-=======
-const column = [{
-  title: 'Name',
-  dataIndex: 'name',
-
-}, {
-  title: 'Cheque No.',
-  dataIndex: 'Cheque',
-
-},
-{
-  title: 'Principal',
-  dataIndex: 'principal',
-
-}, {
-  title: 'Date Created',
-  dataIndex: 'Datee',
-}];
-const colum = [{
-  title: 'Name',
-  dataIndex: 'name',
-
-}, {
-  title: 'Cheque No.',
-  dataIndex: 'Cheque',
-
-},
-{
-  title: 'Phone Number',
-  dataIndex: 'Phone',
-
-},
-{
-  title: 'Location',
-  dataIndex: 'address',
-}];
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 const data = [];
 for (let i = 0; i < 15; i++) {
   data.push({
@@ -182,10 +112,6 @@ class Content extends Component {
       sevisible: false,
       principal: '0',
       interest: '0',
-<<<<<<< HEAD
-=======
-      loginscreen: [],
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
       time: '0',
       visiblee: false,
       visibleee: false,
@@ -196,10 +122,6 @@ class Content extends Component {
     this.handleChang = this.handleChang.bind(this);
     this.handleChan = this.handleChan.bind(this);
     this.handleClick = this.handleClick.bind(this);
-<<<<<<< HEAD
-=======
-    this.handleOnClickCreateLoan = this.handleOnClickCreateLoan.bind(this);
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
 
   }
 
@@ -239,14 +161,6 @@ class Content extends Component {
     });
   };
 
-<<<<<<< HEAD
-=======
-  handleClick = () => {
-
-    // db.addProtocol()
-    this.props.history.push("/UserInfomation")
-  }
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
   handleClic = () => {
 
     this.props.history.push("/Login")
@@ -262,20 +176,8 @@ class Content extends Component {
     this.setState({ time: event.target.value });
   }
 
-<<<<<<< HEAD
   handleOnClickCreateLoan= () => {
        this.setState({ showCreateLoan: true });
-=======
-  handleOnClickCreateLoan() {
-    // if (true) {
-    //   var loginscreen = [];
-    //   loginscreen.push(<Loanfeedback parentContext={this} appContext={this.props.parentContext} />);
-    //   this.setState({
-    //     loginscreen: loginscreen
-    //   })
-    // }
-    this.setState({ showCreateLoan: true });
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
   }
 
   onClose = () => {
@@ -284,10 +186,7 @@ class Content extends Component {
       sevisible: false,
       visibl: false,
       visibleee: false,
-<<<<<<< HEAD
       showCreateLoan: false
-=======
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
     });
   };
   onnClose = () => {
@@ -306,11 +205,7 @@ class Content extends Component {
 
           width={500}
           placement="right"
-<<<<<<< HEAD
           onClose={this.onClose}
-=======
-          // onClose={this.onClose}
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
           maskClosable={false}
           style={{
             height: 'calc(100% - 55px)',
@@ -322,55 +217,22 @@ class Content extends Component {
         // onOk={this.handleClick}
         // onCancel={() => this.setModal2Visible(false)}
         >
-<<<<<<< HEAD
                 <Loanform />
-=======
-          {/* <div>
-            {this.state.loginscreen}
-
-          </div>
-
-
-          <div>
-            <Button type="primary" onClick={(event) => this.handleClick(event)}>Nex</Button>
-          </div> */}
-          <Loanform />
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
         </Drawer>
         <Tabs tabPosition={this.state.tabPosition} type="card" >
           <TabPane tab={<span><Icon type="bank" />Loan</span>} key="1">
-            <Button type="primary" onClick={this.handleOnClickCreateLoan}>
-              Create Loan
-         </Button>
-<<<<<<< HEAD
-          <LoanInformation/>
-=======
-            <div>
-              {this.state.loginscreen}
-            </div>
-            <div  >
-              <Table onRow={(record) => ({
-                onClick: (event) => { this.handleClick(event) },
-                onDoubleClick: () => { this.showDrawe },
-              })} columns={column} dataSource={data} />
-            </div>
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
+              <Button type="primary" onClick={this.handleOnClickCreateLoan}>
+                Create Loan
+              </Button>
+              <LoanInformation/>
           </TabPane>
           <TabPane tab={<span><Icon type="team" />Customer</span>} key="2">
-            <Button type="primary" onClick={this.showSecondDrawer}>
-              Create Customer
-          </Button>
-<<<<<<< HEAD
-            <div >
+              <Button type="primary" onClick={this.showSecondDrawer}>
+                Create Customer
+              </Button>
+      <div >
           <CustomerInformation/>
-=======
-            <div  >
-
-              <Table onRow={record => ({
-                onClick: () => { this.handleClick }
-              })} columns={colum} dataSource={data} />
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-            </div>
+      </div>
             <Drawer
               title="Create New Customer"
               width={500}
@@ -384,92 +246,8 @@ class Content extends Component {
                 paddingBottom: 53,
               }}
             >
-<<<<<<< HEAD
+
               <CustomerForm/> 
-=======
-              <Form layout="vertical" hideRequiredMark>
-                <Row gutter={16}>
-                  <Col span={12}>
-                    <Form.Item label="First Name">
-                      {getFieldDecorator('name', {
-                        rules: [{ required: true, message: 'please enter First name' }],
-                      })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter First name" />)}
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item label="Second namel">
-                      {getFieldDecorator('secondname', {
-                        rules: [{ required: true, message: 'please enter second name' }],
-                      })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter second name" />)}
-                    </Form.Item>
-                  </Col>
-                </Row>
-                <Row gutter={16}>
-                  <Col span={12}>
-                    <Form.Item label="Last name">
-                      {getFieldDecorator('Lastname', {
-                        rules: [{ required: true, message: 'please enter Last name' }],
-                      })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="please enter Last name" />)}
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item label="Cheque Number">
-                      {getFieldDecorator('chequenumber', {
-                        rules: [{ required: true, message: 'please enterCheque Number' }],
-                      })(<Input placeholder="please enter Cheque Number" />)}
-                    </Form.Item>
-                  </Col>
-                </Row>
-                <Row gutter={16}>
-                  <Col span={12}>
-                    <Form.Item label="Country">
-                      {getFieldDecorator('secondname', {
-                        rules: [{ required: true, message: 'please enter second name' }],
-                      })(<Input placeholder="please enter second name" />)}
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item label="Region">
-                      {getFieldDecorator('Region', {
-                        rules: [{ required: true, message: 'please enter Region' }],
-                      })(<Input placeholder="please enter Region" />)}
-                    </Form.Item>
-                  </Col>
-                </Row>
-                <Row gutter={16}>
-                  <Col span={12}>
-                    <Form.Item label="District">
-                      {getFieldDecorator('District', {
-                        rules: [{ required: true, message: 'please enter District name' }],
-                      })(<Input placeholder="please enter District name" />)}
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item label="area">
-                      {getFieldDecorator('area', {
-                        rules: [{ required: true, message: 'please enter area name' }],
-                      })(<Input placeholder="please enter area name" />)}
-                    </Form.Item>
-                  </Col>
-                </Row>
-                <Row gutter={16}>
-                  <Col span={12}>
-                    <Form.Item label="Phone Number">
-                      {getFieldDecorator('Phone Number', {
-                        rules: [{ required: true, message: 'please enter Phone Number' }],
-                      })(<Input placeholder="please enter Phone Number" />)}
-                    </Form.Item>
-                  </Col>
-                  <Col span={12}>
-                    <Form.Item label="Date of Registration">
-                      {getFieldDecorator('Date of Registration', {
-                        rules: [{ required: true, message: 'please enter Date of Registration' }],
-                      })(<DatePicker style={{ width: '100%' }} />)}
-                    </Form.Item>
-                  </Col>
-                </Row>
-              </Form>
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
               <div
                 style={{
                   position: 'absolute',
@@ -496,28 +274,11 @@ class Content extends Component {
             </Drawer>
           </TabPane>
           <TabPane tab={<span><Icon type="line-chart" />Installment</span>} key="3" >
-            <br /> <div>
-              <Button type="primary" onClick={this.showDrawe}>
-                Create Loan
-                </Button>
-              <div  >
-                <Cascader
-                  options={options}
-                  onChange={onChange}
-                  placeholder="Please select"
-                  showSearch={{ filter }}
-                />
-<<<<<<< HEAD
-<<<<<<< HEAD
-                <Table columns={columns} dataSource={data} />
-=======
-                <Table columns={column} dataSource={data} />
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-=======
-                <Table columns={column} dataSource={data} />
->>>>>>> ceb335741443767de08c95cd74d05ddcf59fb0de
-              </div>
-            </div></TabPane>
+            <br /> 
+            
+                         <div >
+          <Installment/>
+      </div></TabPane>
           <TabPane tab={<span><Icon type="file" />Report</span>} key="4"><br />No report to print out</TabPane>
         </Tabs>
         <div
